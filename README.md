@@ -5,7 +5,7 @@
 <br/>
 
 <p align="center" style="padding: 45px;">
-    <img src="/img/computer.png">
+    <img src="/img/computer-2.png">
 </p>
 
 <br/>
