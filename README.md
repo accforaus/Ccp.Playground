@@ -5,7 +5,7 @@
 <br/>
 
 <p align="center" style="padding: 45px;">
-    <img src="/img/logo.png" width="400" height="200">
+    <img src="/img/logo.png" width="400" height="140">
 </p>
 
 <p align="center" style="padding: 45px:">
