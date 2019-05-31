@@ -12,9 +12,16 @@
     <img src="https://img.shields.io/badge/TEAM-OUR%20HOURS-yellow.svg">
 </p>
 
+<br/>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Leader-김하늘-brightgreen.svg">
+</p>
+
 <p align="center" style="padding: 45px;">
-    <img src="https://img.shields.io/badge/Leader-이하늘-yellowgreen.svg">
+    <img src="https://img.shields.io/badge/Member-이주원-orange.svg">
     <img src="https://img.shields.io/badge/Member-최연우-brightgreen.svg">
+    <img src="https://img.shields.io/badge/Member-황인성-blue.svg">
 </p>
 
 <br/>
