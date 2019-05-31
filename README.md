@@ -5,11 +5,16 @@
 <br/>
 
 <p align="center" style="padding: 45px;">
-    <img src="/img/logo.png" width="300" height="150">
+    <img src="/img/logo.png" width="400" height="200">
 </p>
 
 <p align="center" style="padding: 45px:">
-    <img src="https://img.shields.io/badge/TEAM-YEONWOO-orange.svg">
+    <img src="https://img.shields.io/badge/TEAM-OUR%20HOURS-yellow.svg">
+</p>
+
+<p align="center" style="padding: 45px;">
+    <img src="https://img.shields.io/badge/Leader-Lee-green.svg">
+    <img src="https://img.shields.io/badge/Member-YEONWOO-brightgreen.svg">
 </p>
 
 <br/>
