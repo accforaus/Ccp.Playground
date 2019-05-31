@@ -13,8 +13,8 @@
 </p>
 
 <p align="center" style="padding: 45px;">
-    <img src="https://img.shields.io/badge/Leader-Lee-green.svg">
-    <img src="https://img.shields.io/badge/Member-YEONWOO-brightgreen.svg">
+    <img src="https://img.shields.io/badge/Leader-이하늘-yellowgreen.svg">
+    <img src="https://img.shields.io/badge/Member-최연우-brightgreen.svg">
 </p>
 
 <br/>
