@@ -8,6 +8,10 @@
     <img src="/img/computer-2.png">
 </p>
 
+<p align="center" style="padding: 45px:">
+    <img src="https://img.shields.io/badge/TEAM-YEONWOO-orange.svg">
+</p>
+
 <br/>
 
 ## How to work?
