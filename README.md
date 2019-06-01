@@ -1,6 +1,5 @@
 # Cpp Playground
 
-> 본 레포지토리는 CPP를 준비하는 멤버들의 프로그래밍 실력 향상을 위한 레포지토리 입니다.
 
 <br/>
 
@@ -24,6 +23,7 @@
     <img src="https://img.shields.io/badge/Member-황인성-blue.svg">
 </p>
 
+> 본 레포지토리는 CPP를 준비하는 멤버들의 프로그래밍 실력 향상을 위한 레포지토리 입니다.
 <br/>
 
 ## How to work?

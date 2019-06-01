@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="382a1428-9a71-49b6-be79-af064094b9a7" name="Default Changelist" comment="" />
+    <list default="true" id="382a1428-9a71-49b6-be79-af064094b9a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +19,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="200">
-                <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+              <first_editor relative-caret-position="533">
+                <caret line="24" selection-start-line="24" selection-end-line="24" />
               </first_editor>
               <second_editor />
             </state>
@@ -69,10 +71,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="810" />
-    <option name="y" value="32" />
+    <option name="x" value="887" />
+    <option name="y" value="50" />
     <option name="width" value="1033" />
-    <option name="height" value="956" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -80,8 +82,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -122,6 +124,7 @@
       <workItem from="1559222463903" duration="1343000" />
       <workItem from="1559273622893" duration="1236000" />
       <workItem from="1559276177111" duration="1007000" />
+      <workItem from="1559297796401" duration="873000" />
     </task>
     <task id="LOCAL-00001" summary="edit readme and add new directory">
       <created>1559223475644</created>
@@ -158,17 +161,31 @@
       <option name="project" value="LOCAL" />
       <updated>1559279216671</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add members">
+      <created>1559297954211</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559297954211</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add members">
+      <created>1559297987658</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559297987658</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3586000" />
+    <option name="totallyTimeSpent" value="4459000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="707" y="34" width="1033" height="956" extended-state="0" />
+    <frame x="570" y="23" width="1033" height="952" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25227043" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25731584" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -205,15 +222,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit readme and add new directory" />
     <MESSAGE value="edit readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit readme" />
+    <MESSAGE value="Add members" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add members" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/yeonwoo/test.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="200">
-            <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+          <first_editor relative-caret-position="533">
+            <caret line="24" selection-start-line="24" selection-end-line="24" />
           </first_editor>
           <second_editor />
         </state>
