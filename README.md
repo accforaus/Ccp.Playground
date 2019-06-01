@@ -4,7 +4,7 @@
 <br/>
 
 <p align="center" style="padding: 45px;">
-    <img src="/img/logo.png" width="400" height="140">
+    <img src="/img/logo.png" width="450" height="110">
 </p>
 
 <p align="center" style="padding: 45px:">
@@ -162,7 +162,7 @@ boolean isS;
  ``` 
 
 
-#### 파일 이름
+#### 파일 이름 
 
 > 파일 이름은 모두 소문자로 구성하며 "_"를 포함할 수 있다.
 
