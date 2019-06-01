@@ -4,7 +4,7 @@
 <br/>
 
 <p align="center" style="padding: 45px;">
-    <img src="/img/logo.png" width="450" height="110">
+    <img src="/img/logo.png" width="400" height="100">
 </p>
 
 <p align="center" style="padding: 45px:">
@@ -182,8 +182,6 @@ MyUsefulFunctions.js
 some-functions.c
 some-functions.kt
 ```
-
-#### 파일 이
 
 > 이미 존재하는 파일 / 클래스 이름은 사용하지 않는다.
 
