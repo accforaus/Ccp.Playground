@@ -10,6 +10,11 @@ function printPrimeNumberByArray() {
                 kajji = false
             }
         }
+        /**
+         * 이게 뭐냐?
+         *
+         * ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+         */
         if (kajji) {
             primeArr.push(i)
         }else {
