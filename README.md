@@ -28,6 +28,17 @@
 
 ## How to work?
 
+## [Guide](https://github.com/accforaus/Ccp.Playground/tree/master/guide)
+> github의 사용법, 그리고 코드 스타일을 통일화 하기 위한 가이드 입니다.
+
+* Github
+    - pull (다른 사용자와 동기화 *필수 작업*)
+    - push (완성된 코드를 원격 저장소에 동기화)
+    
+* code style
+    - 코드 스타일의 통일을 위한 가이드
+    
+
 ## [Project](https://github.com/accforaus/Cpp_Playground/projects)
 
 게시판을 이용하여 각 팀원들의 실력향상을 위한 피드백과 공통적인 주제의 과제를 사용하여 실력향상을 도모합니다.
