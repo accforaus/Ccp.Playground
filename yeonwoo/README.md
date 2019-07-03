@@ -1,6 +1,3 @@
 # 최연우 레포지토리
 
-## wakwak
-
-
-## upload practicing
+## 완성된 과제 목록
