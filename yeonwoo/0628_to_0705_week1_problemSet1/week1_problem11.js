@@ -1,14 +1,19 @@
+/**
+ * Write a function that returns a passed string with letters in alphabetical older
+ * @param str
+ * @returns {string|string}
+ */
 function order(str) {
     let arr = str.split("")
     let arr1 = []
     let arr2 = []
-    for ( let i = 0 ; i < arr.length ; i++ ) {
+    for (let i = 0; i < arr.length; i++) {
         arr1.push(arr[i].charCodeAt(0))
     }
-    for ( let j = 0 ; j < arr1.length ; j++) {
+    for (let j = 0; j < arr1.length; j++) {
         let minimum = j
-        for ( let k = j+1 ; k < arr1.length ; k++) {
-            if ( arr1[minimum] >= arr1[k]) {
+        for (let k = j+1; k < arr1.length; k++) {
+            if (arr1[minimum] >= arr1[k]) {
                 minimum = k
             }
         }
@@ -17,7 +22,7 @@ function order(str) {
         arr1[j] = temp
     }
     let result = ''
-    for ( let m = 0 ; m < arr1.length ; m++) {
+    for (let m = 0; m < arr1.length; m++) {
         arr2[m] = String.fromCharCode(arr1[m])
         result += arr2[m]
     }
@@ -25,3 +30,4 @@ function order(str) {
 }
 
 console.log(order('webmaster'))
+console.log(order('swqeijhfdkjcsafjowe'))

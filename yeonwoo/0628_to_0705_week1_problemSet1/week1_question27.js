@@ -1,18 +1,14 @@
-function findLongest(arr) {
-    let arr1 = []
+const sortFromMaximum = require('../utilFolder/function sortFromMaximum')
 
-    for ( let j = 0 ; j < arr.length ; j++) {
-        let maximum = j
-        for ( let k = j+1 ; k < arr.length ; k++) {
-            if ( arr[maximum].length <= arr[k].length) {
-                maximum = k
-            }
-        }
-        let temp = arr[maximum]
-        arr[maximum] = arr[j]
-        arr[j] = temp
-    }
+/**
+ * Write a function that accept a list of country names as input and returns the longest country name as output.
+ * @param arr
+ * @returns {*}
+ */
+function findLongest(arr) {
+    sortFromMaximum(arr)
     return arr[0]
 }
 
 console.log(findLongest(['Australia', 'Germany', 'Korea', 'United States of America']))
+console.log(findLongest(['abcde', 'abcdefg', 'abc', 'abcdefgh', 1234567, []]))

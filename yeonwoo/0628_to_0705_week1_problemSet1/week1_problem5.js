@@ -1,3 +1,11 @@
+const sortFromMinimum = require('../utilFolder/function sortFromMinimum')
+
+/**
+ * Write a program to compute the exponent of a number
+ * Note: The exponent of a number says how many times the base number is used as a factor
+ * @param num
+ * @returns {*}
+ */
 function exponent(num) {
     let arr = []
     for ( let i = 2 ; i < num+1 ; i++) {
@@ -8,22 +16,10 @@ function exponent(num) {
                 }
             }
         }
-    return arr
+    sortFromMinimum(arr)
+    return arr[arr.length-1]
     }
 
-function Maximumm(array) {
-    for ( let i = 0 ; i < array.length ; i++) {
-        let minimum = i
-        for ( let j = i + 1 ; j < array.length ; j++ ) {
-            if ( array[minimum] < array[j] ) {
-                minimum = j
-            }
-        }
-        let temp = array[minimum]
-        array[minimum] = array[i]
-        array[i] = temp
-    }
-    return array[array.length-1]
-}
 
-console.log(Maximumm(exponent(64)))
+console.log(exponent(64))
+console.log(exponent(216))

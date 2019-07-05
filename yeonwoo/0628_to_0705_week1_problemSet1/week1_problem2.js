@@ -1,21 +1,20 @@
+const sortFromMinimum = require('../utilFolder/function sortFromMinimum')
+
+/**
+ * Write a program to find the greatest common divisor (GCD) of two positive numbers
+ * @param num1
+ * @param num2
+ * @returns {*}
+ * @constructor
+ */
 function GCD(num1, num2) {
     let array = []
-    for ( let i = 2 ; i < num1 + 1 ; i++) {
-        if ( num1 % i === 0 && num2 % i === 0 ) {
+    for (let i = 2; i < num1 + 1; i++) {
+        if (num1 % i === 0 && num2 % i === 0) {
             array.push(i)
         }
     }
-    for ( let i = 0 ; i < array.length ; i++) {
-        let minimum = i
-        for ( let j = i + 1 ; j < array.length ; j++ ) {
-            if ( array[minimum] < array[j] ) {
-                minimum = j
-            }
-        }
-        let temp = array[minimum]
-        array[minimum] = array[i]
-        array[i] = temp
-    }
+    sortFromMinimum(array)
     return array[0]
 }
 
