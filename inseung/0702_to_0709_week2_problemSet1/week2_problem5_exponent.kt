@@ -12,7 +12,6 @@ console.log(exponent(64)) // output 2
  */
 
 import java.util.Scanner
-import kotlin.test.assertTrue
 
 fun main (args: Array<String>) {
     val reader: Scanner = Scanner(System.`in`)
@@ -28,16 +27,16 @@ fun main (args: Array<String>) {
 
 fun exponent (num: Int) {
 
-	fun isFactor (num: Int, base: Int) : Boolean {
-    return if ((num % base) > 0)  false
-    else if ((num / base) == 1)  true
-    else isFactor(num / base, base)
-}
+    fun isFactor (num: Int, base: Int) : Boolean {
+        return if ((num % base) > 0)  false
+        else if ((num / base) == 1)  true
+        else isFactor(num / base, base)
+    }
 
-    var count = 0
+    var counter: Boolean = true
     for (i in 2..(num - 1))
-        if (isFactor(num, i)) { print("$i "); count += 1 }
-    if (count == 0) print("$num is not a power of any bases")
+        if (isFactor(num, i)) { print("$i "); counter = false; break }
+    if (counter) print("$num is not a power of any bases")
 }
 
 
@@ -45,4 +44,6 @@ fun exponent (num: Int) {
 /*
 base 도 입력으로 받아야 될 듯한데 문제 뜻을 모르겠네요
 일단 제곱수인지 판단하는 형식으로 만들었어요
+
+가장 작은 base를 찾도록 수정함
  */
