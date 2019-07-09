@@ -1,0 +1,30 @@
+const RobotManager = require('./robot_manager')
+const CleaningRobot = require('./cleaning_robot')
+const DogRobot = require('./dog_robot')
+
+
+cleany = new CleaningRobot()
+cleany.setValue(1,'CleaningRobot','클리니',20,20,200,3,4)
+dogy = new DogRobot()
+dogy.setArray(2,'DogRobot','도그1',30,30,150,10,10)
+
+robotManager = new RobotManager()
+robotManager.insertRobotData(cleany)
+robotManager.insertRobotData(dogy)
+console.log(robotManager.checkRobotList())
+console.log(`--------------------------------------\n`)
+console.log(robotManager.changeLocation(dogy,1,2,3,4))
+console.log(`--------------------------------------\n`)
+console.log(robotManager.searchByCostRange(0,200))
+console.log(`--------------------------------------\n`)
+console.log(robotManager.searchRobotByName('클리니'))
+console.log(`--------------------------------------\n`)
+console.log(robotManager.searchRobotById(2))
+console.log(`--------------------------------------\n`)
+robotManager.deleteRobot(2)
+console.log(robotManager.checkRobotList())
+console.log(`--------------------------------------\n`)
+robotManager.insertRobotData(dogy)
+console.log(robotManager.checkRobotList())
+
+
