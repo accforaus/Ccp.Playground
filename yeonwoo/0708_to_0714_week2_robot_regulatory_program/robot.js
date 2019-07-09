@@ -1,7 +1,12 @@
 /**
- * a basic robot class and stores common key values.
- *
+ * A class that assign common keys & values about robot such as cleaningRobot, dogRobot and so on.
+ * <p>
+ *     inherit to CleaningRobot, DogRobot, RobotManager
+ *     including method called 'move' that change the location according to the inserted data
+            => will be used in the method 'changeLocation' in class RobotManager
+ * </p>
  * @author Yeonwoo Choi
+ * @see cleaning_robot & dog_robot & robot_manager
  */
 class Robot {
 

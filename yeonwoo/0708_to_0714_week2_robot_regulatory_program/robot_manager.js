@@ -3,8 +3,16 @@ const Robot = require('./robot')
 /**
  * A class containing several methods for robot objects
  *
+ * <p>
+ *     inherit from robot
+ *     A method that targets an object associated with a robot class
+          => insertRobotData, checkRobotList, changeLocation, searchByCostRange, searchRobotByName, searchRobotById
+ * </p>
+ *
  * @author Yeonwoo Choi
+ * @see robot
  */
+
 class RobotManager extends Robot{
     constructor() {
         super()
