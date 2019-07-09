@@ -2,11 +2,14 @@
 const Robot = require('./robot')
 
 /**
- * A class that assign additional keys & values to robot especially 'cleaningRobot'
+ * Class with new key and method added to Robot class
+ * a class that assign additional keys and values to some robot especially 'cleaning robot'
+ * cleaning robot is a robot that moves and cleans some room with size 200 X 200
  *
  * <p>
  *     inherit from robot
  *     additional key = this.cleaningPower
+ *          Since all robots do not have the function of 'power', I added only the 'cleaning power' key value.
  * </p>
  *
  * @author Yeonwoo Choi

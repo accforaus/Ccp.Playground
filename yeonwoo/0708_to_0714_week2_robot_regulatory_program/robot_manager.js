@@ -5,8 +5,13 @@ const Robot = require('./robot')
  *
  * <p>
  *     inherit from robot
- *     A method that targets an object associated with a robot class
-          => insertRobotData, checkRobotList, changeLocation, searchByCostRange, searchRobotByName, searchRobotById
+ *     a class that includes methods for storing and managing robot data
+          => insert robot data
+             check robot list
+             change location
+             search by cost range
+             search robot by name
+             search robot by id
  * </p>
  *
  * @author Yeonwoo Choi

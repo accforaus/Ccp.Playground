@@ -1,10 +1,14 @@
 const Robot = require('./robot')
+
 /**
- * A class that assign additional keys & values to robot especially 'dogRobot'
+ * Class with new key and method added to Robot class
+ * a class that assign additional keys and values to some robot especially 'dog robot'
+ * dog robot is a robot that seems like dog (animal) and is able to move
  *
  * <p>
  *     inherit from robot
- *     additional key = this.dogPower
+ *     additional key = this.barkPower
+ *          Since all robots do not have the function of 'power', I added only the 'bark power' key value.
  * </p>
  *
  * @author Yeonwoo Choi
@@ -18,7 +22,7 @@ class DogRobot extends Robot{
      */
     constructor () {
         super()
-        this.dogPower = 0
+        this.barkPower = 0
     }
 
     /**
@@ -30,9 +34,9 @@ class DogRobot extends Robot{
      * @param y
      * @param price
      * @param distance
-     * @param dogPower
+     * @param barkPower
      */
-    setValue (id, kind, name, x, y, price, distance, dogPower) {
+    setValue (id, kind, name, x, y, price, distance, barkPower) {
 
         this.robotId = id
         this.robotKind = kind
@@ -41,7 +45,7 @@ class DogRobot extends Robot{
         this.robotLocationY = y
         this.robotPrice = price
         this.robotDistance = distance
-        this.dogPower = `${this.robotKind}=${dogPower}`
+        this.barkPower = `${this.robotKind}=${barkPower}`
     }
 }
 
