@@ -7,12 +7,10 @@ data class Coordinate2D (var x: Int, var y: Int) { //x y 좌표와 distance 만�
 
     fun move (direction: Int, distance: Int) {
         fun moveX (direction: Int)  {
-            if (x + distance !in 0..MAP_SIZE) return //이동후 위치가 map의 크기 200과 0을 넘어가면 움직이지 않음
-            else x = x + direction
+            if (x + distance in 0..MAP_SIZE) x = x + direction //이동후 위치가 map의 크기 200과 0을 넘어가면 움직이지 않음
         }
         fun moveY (direction: Int) {
-            if (y + distance !in 0..MAP_SIZE) return
-            else y = y + direction
+            if (y + distance !in 0..MAP_SIZE) y = y + direction
         }
         when (direction) {
             1 -> moveY(distance)
