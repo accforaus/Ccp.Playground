@@ -6,7 +6,7 @@ import korea.Hwang.ccp.domain.DogRobot
 import korea.Hwang.ccp.domain.Robot
 import korea.Hwang.ccp.utils.RobotComparators.*
 
-class Controller {
+object Controller {
     val collection = arrayListOf<Robot>()
 
     fun printMenu () {
@@ -23,25 +23,16 @@ class Controller {
         println ("번호    종류            Robot ID    Robot명        x    y   price   distance    etc")
         println ("------------------------------------------------------------------------------------")
     }
-    fun printListByID () { //ID 순으로 List 출력
+
+    fun printList (sortType: String) {
+        when (sortType) {
+            "ID" -> collection.sortWith(RobotIDComparator())
+            "Model" -> collection.sortWith(RobotModelComparator())
+            "Type" -> collection.sortWith(RobotTypeComparator())
+            else -> collection.sortWith(RobotPriceComparator())
+        }
         printTable()
-        collection.sortWith(RobotIDComparator())
-        collection.forEachIndexed { index, thisObj -> print("${index + 1}    "); thisObj.show() } //index를 출력한 후 각 객체의 show() 함수 호출
-    }
-    fun printListByModel () { //model 순으로 List 출력
-        printTable()
-        collection.sortWith(RobotModelComparator())
-        collection.forEachIndexed { index, thisObj -> print("${index + 1}    "); thisObj.show() }
-    }
-    fun printListByType () { //Type 순으로 List 출력
-        printTable()
-        collection.sortWith(RobotTypeComparator())
-        collection.forEachIndexed { index, thisObj -> print("${index + 1}    "); thisObj.show() }
-    }
-    fun printListByPrice () { //Price 순으로 List 출력
-        printTable()
-        collection.sortWith(RobotPriceComparator())
-        collection.forEachIndexed { index, thisObj -> print("${index + 1}    "); thisObj.show() }
+        collection.forEachIndexed { index, thisObj -> print("${index + 1}    "); thisObj.show() } //index를 출력한 후 각 객체의 show() 함수 호출s
     }
 
     fun printByPrice (min: Int, max: Int) { //price 가 min과 max 사이에 있을 경우만 출력
@@ -138,15 +129,15 @@ class Controller {
         while (true) { // 입력 예외 처리
             print("로봇 리스트 정렬을 선택하세요(1. 로봇명순, 2. 가격순 3. ID순) : ")
             val sortType = InputHelper.getInt()
-            if (sortType == 1) { printListByModel(); break }
-            else if (sortType == 2) { printListByPrice(); break }
-            else if (sortType == 3) { printListByID(); break }
+            if (sortType == 1) { printList("Model"); break }
+            else if (sortType == 2) { printList("Price"); break }
+            else if (sortType == 3) { printList("ID"); break }
             else { println("1부터 3사이의 정수를 입력해 주세요."); continue }
         }
     }
 
     fun moveRobot () {
-        printListByType()
+        printList("Type")
         while (true) { // 입력 예외 처리
             print("이동할 로봇의 ID를 선택하세요: ")
             val moveID = InputHelper.getInt()
@@ -156,22 +147,22 @@ class Controller {
                 while (true) { //입력 예외 처리
                     print("이동 (1. 상, 2. 하, 3. 좌, 4. 우) : ")
                     val moveDirection = InputHelper.getInt() //이동 방향 입력받기
-                    if (moveDirection in 1..4) {
-                        if (this is CleaningRobot) {
-                            print ("Cleaning Robot ${this.model}가 "); this.position.showPosition(); print("  위치에서 ")
-                            this.position.move(moveDirection, this.distance)
-                            this.position.showPosition(); println("  로 이동하였습니다.")
-                            switch = true
+                    when (moveDirection) {
+                        in 1..4 -> {
+                            if (this is CleaningRobot) {
+                                print("Cleaning Robot ${this.model}가 "); this.position.showPosition(); print("  위치에서 ")
+                                this.position.move(moveDirection, this.distance)
+                                this.position.showPosition(); println("  로 이동하였습니다.")
+                                switch = true
+                            } else {
+                                print("Dog Robot ${this.model}가 "); this.position.showPosition(); print("  위치에서 ")
+                                this.position.move(moveDirection, this.distance)
+                                this.position.showPosition(); println("  로 이동하였습니다.")
+                                switch = true
+                            }
                         }
-                        else {
-                            print("Dog Robot ${this.model}가 "); this.position.showPosition(); print("  위치에서 ")
-                            this.position.move(moveDirection, this.distance)
-                            this.position.showPosition(); println("  로 이동하였습니다.")
-                            switch = true
-                        }
-                        break
+                        else -> println("1부터 4사이의 정수를 입력해 주세요.")
                     }
-                    else { println("1부터 4사이의 정수를 입력해 주세요."); continue }
                 }
             } ?: println("입력한 ID 에 해당되는 로봇이 없습니다.")
 
@@ -180,7 +171,7 @@ class Controller {
     }
 
     fun deleteRobot () {
-        printListByID()
+        printList("ID")
         while (true) { //입력 예외 처리
             print("삭제할 로봇의 ID를 입력하세요: ")
             val deleteID = InputHelper.getInt()
