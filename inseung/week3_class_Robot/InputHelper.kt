@@ -1,3 +1,4 @@
+import java.lang.NumberFormatException
 import java.util.*
 
 object InputHelper {
@@ -5,7 +6,12 @@ object InputHelper {
 
     fun getInt() : Int {
         scanner = Scanner(System.`in`)
-        return scanner.nextInt()
+        try {
+            return scanner.nextInt()
+        } catch (e: InputMismatchException) {
+            print("다시 입력해주세요 : ")
+            return getInt()
+        }
     }
 
     fun getString() : String {
