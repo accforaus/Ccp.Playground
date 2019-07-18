@@ -9,31 +9,34 @@ console.log(combinations('dog')) // output 'd, do, dog, o, og, g'
  */
 
 import java.util.Scanner
-import kotlin.test.assertTrue
 
-fun main (args: Array<String>) {
-    val reader: Scanner = Scanner(System.`in`)
+fun main () {
+    val reader = Scanner(System.`in`)
 
     while (true) {
         val input = reader.next()
         if (input == "-1") break //입력이 -1 면 종료
 
         combination (input)
-
+        print("\n")
     }
 }
 
 fun combination (input: String) {
     val size = input.length - 1
 
-    fun printString(input: String, start:Int, end: Int) {
-        for (i in start..end) print(input[i])
-    }
-
-    for (i in 0..size) {
-        for (j in i..size) {
-            printString(input, i, j)
-            if (i == size) print("\n") else print(", ")
+    tailrec fun process (input: String) : ArrayList<String> = when (input.length) {
+        0 -> arrayListOf<String>("")
+        else -> {
+            val prev = process(input.drop(1))
+            val temp = arrayListOf<String>()
+            prev.forEach { temp.add ("${input[0]}$it") }
+            temp.addAll(prev)
+            temp
         }
     }
+
+    val result = process(input)
+    result.sortWith(Comparator { o1, o2 -> o2.length - o1.length })
+    print (result.dropLast(1))
 }
