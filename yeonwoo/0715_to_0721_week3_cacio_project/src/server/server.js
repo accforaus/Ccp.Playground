@@ -12,13 +12,15 @@ class Server {
         if (request.header.type !== 'GET') {
             this.code = 405;
             return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
+        }
+        if (this.checkRequestForm(request) === 'error') {
             this.code = 400;
             return this.createResponse(this.code, this.result)
-        } else if (this.user[request.payload.data] === undefined ){
+        }
+        if (this.user[request.payload.data] === undefined ){
             this.code = 404;
             return this.createResponse(this.code, this.result)
-        } else if (this.user[request.payload.data] !== undefined ) {
+        } else {
             this.code = 200;
             this.result = this.user[request.payload.data];
             return this.createResponse(this.code, this.result)
@@ -30,7 +32,8 @@ class Server {
         if (request.header.type !== 'GET' && request.header.type !== 'POST') {
             this.code = 405;
             return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
+        }
+        if (this.checkRequestForm(request) === 'error') {
             this.code = 400;
             return this.createResponse(this.code, this.result)
         } else if (newIndex >= this.user.length || newIndex < 0) {
@@ -44,112 +47,48 @@ class Server {
         }
     }
 
-    findByName (request) {
+    findBySomeKey(request, key) {
         if (request.header.type !== 'POST') {
             this.code = 405;
             return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
+        }
+        if (this.checkRequestForm(request) === 'error') {
             this.code = 400;
             return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data) === undefined ){
+        }
+        if (this.findInUsersArray(request.payload.data, key) === undefined ){
             this.code = 404;
             return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data,'name') !== undefined ) {
+        } else {
             this.code = 200;
-            let index = this.findIndexInUsersArray(request.payload.data, 'name');
+            let index = this.findIndexInUsersArray(request.payload.data, key);
             this.result = this.user[index];
             return this.createResponse(this.code, this.result)
         }
+    }
+
+    findByName (request) {
+        return this.findBySomeKey(request,'name')
     }
 
     findByLocation (request) {
-        if (request.header.type !== 'POST') {
-            this.code = 405;
-            return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
-            this.code = 400;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data,'location') === undefined ){
-            this.code = 404;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'location') !== undefined ) {
-            this.code = 200;
-            let index = this.findIndexInUsersArray(request.payload.data, 'location');
-            this.result = this.user[index];
-            return this.createResponse(this.code, this.result)
-        }
+        return this.findBySomeKey(request,'location')
     }
 
     findByEmail (request) {
-        if (request.header.type !== 'POST') {
-            this.code = 405;
-            return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
-            this.code = 400;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'email') === undefined ){
-            this.code = 404;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'email') !== undefined ) {
-            this.code = 200;
-            let index = this.findIndexInUsersArray(request.payload.data, 'email');
-            this.result = this.user[index];
-            return this.createResponse(this.code, this.result)
-        }
+        return this.findBySomeKey(request,'email')
     }
 
     findByPhone (request) {
-        if (request.header.type !== 'POST') {
-            this.code = 405;
-            return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
-            this.code = 400;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'phone') === undefined ){
-            this.code = 404;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'phone') !== undefined ) {
-            this.code = 200;
-            let index = this.findIndexInUsersArray(request.payload.data, 'phone');
-            this.result = this.user[index];
-            return this.createResponse(this.code, this.result)
-        }
+        return this.findBySomeKey(request,'phone')
     }
 
     findByCell (request) {
-        if (request.header.type !== 'POST') {
-            this.code = 405;
-            return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
-            this.code = 400;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data,'cell') === undefined ){
-            this.code = 404;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'cell') !== undefined ) {
-            this.code = 200;
-            let index = this.findIndexInUsersArray(request.payload.data, 'cell');
-            this.result = this.user[index];
-            return this.createResponse(this.code, this.result)
-        }
+        return this.findBySomeKey(request,'cell')
     }
 
     findByGender (request) {
-        if (request.header.type !== 'POST') {
-            this.code = 405;
-            return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
-            this.code = 400;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'gender') === undefined ){
-            this.code = 404;
-            return this.createResponse(this.code, this.result)
-        } else if (this.findInUsersArray(request.payload.data, 'gender') !== undefined ) {
-            this.code = 200;
-            let index = this.findIndexInUsersArray(request.payload.data, 'gender');
-            this.result = this.user[index];
-            return this.createResponse(this.code, this.result)
-        }
+        return this.findBySomeKey(request,'gender')
     }
 
     createNewObj (request) {
@@ -171,10 +110,12 @@ class Server {
         if (request.header.type !== 'POST') {
             this.code = 405;
             return this.createResponse(this.code, this.result)
-        } else if (this.checkRequestForm(request) === 'error') {
+        }
+        if (this.checkRequestForm(request) === 'error') {
             this.code = 400;
             return this.createResponse(this.code, this.result)
-        } else if (request.payload.data['index'] === undefined) {
+        }
+        if (request.payload.data['index'] === undefined) {
             this.code = 404;
             return this.createResponse(this.code, this.result)
         } else {
@@ -186,56 +127,73 @@ class Server {
 
     createResponse (code, results) {
         let response = new Response();
-        return response.result(code, results)
+        return response.makeResponse(code, results)
     }
 
     findInUsersArray (input, key) {
+        let saveData = {}
         for (let p in input) {
             for (let q = 0; q < this.user.length; q++) {
                 if (input[p] === this.user[q][key]) {
-                    return this.user[q]
-                } else if (typeof (input[p]) === 'object' && this.checkObjectIsSameOrNot(input[p],this.user[q][key])) {
-                    return this.user[q]
+                    saveData = this.user[q]
+                    return saveData
+                } else if (typeof (input[p]) === 'object') {
+                    if ( this.checkObjectIsSameOrNot(input[p], this.user[q][key])) {
+                        saveData = this.user[q]
+                        return saveData
+                    } else {
+                        for (let r in input[p]){
+                            if( typeof (input[p][r]) === 'object') {
+                                if (this.checkObjectIsSameOrNot(input[p][r], this.user[q][key][r])) {
+                                    saveData = this.user[q]
+                                    return saveData
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-    checkObjectIsSameOrNot(x, y) {
-        let type = typeof a, i, j;
-        if( type === "object" ){
-            if( a === null ) return a === b;
-            else if( Array.isArray(a) ){
-                if( !Array.isArray(b) || a.length !== b.length ) return false;
-                for( i = 0, j = a.length ; i < j ; i++ ){
-                    if(!this.checkObjectIsSameOrNot(a[i], b[i]))return false;
-                }
-                return true;
-            }else{
 
-                j = 0;
-                for( i in b ){
-                    if( b.hasOwnProperty(i) ) j++;
-                }
-
-                for( i in a ){
-                    if( a.hasOwnProperty(i) ){
-                        if( !this.checkObjectIsSameOrNot( a[i], b[i] ) ) return false;
-                        j--;
-                    }
-                }
-
-                return !j;
-            }
+    checkObjectIsSameOrNot( obj1, obj2 ) {
+        if (obj1 === obj2) return true;
+        if (!(obj1 instanceof Object) || !(obj2 instanceof Object)) return false;
+        if (obj1.constructor !== obj2.constructor) return false;
+        for (let p in obj1) {
+            if (!obj1.hasOwnProperty(p)) continue;
+            if (!obj2.hasOwnProperty(p)) return false;
+            if (obj1[p] === obj2[p]) continue;
+            if (typeof (obj1[p]) !== "object") return false;
+            if (!this.checkObjectIsSameOrNot(obj1[p], obj2[p])) return false;
+        }
+        for (let p in obj2) {
+            if (obj2.hasOwnProperty(p) && !obj1.hasOwnProperty(p)) return false;
         }
         return true;
     }
+
     findIndexInUsersArray (input, key) {
+        let saveIndex = 0
         for (let p in input) {
             for (let q = 0; q < this.user.length; q++) {
                 if (input[p] === this.user[q][key]) {
-                    return q
-                } else if (typeof (input[p]) === 'object' && this.checkObjectIsSameOrNot(input[p],this.user[q][key])) {
-                    return q
+                    saveIndex = q
+                    return saveIndex
+                } else if (typeof (input[p]) === 'object') {
+                    if ( this.checkObjectIsSameOrNot(input[p], this.user[q][key])) {
+                        saveIndex = q
+                        return saveIndex
+                    } else {
+                        for (let r in input[p]){
+                            if( typeof (input[p][r]) === 'object') {
+                                if (this.checkObjectIsSameOrNot(input[p][r], this.user[q][key][r])) {
+                                    saveIndex = q
+                                    return saveIndex
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -6,7 +6,7 @@ class Request {
         this.header = {}
         this.payload = {}
     }
-    results (type, input) {
+    makeRequest (type, input) {
         this.header.type = type
         this.header.accepts = checkTypeOf(input)
         this.header.user_agent = 'Node.js'

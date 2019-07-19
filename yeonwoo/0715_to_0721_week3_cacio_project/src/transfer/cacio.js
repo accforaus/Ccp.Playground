@@ -28,29 +28,7 @@ class Cacio {
         else if (input1 === 500) return 'Internal Server Error'
         else return 'Server Unavailable'
     }
-        /*switch (input1) {
-            case 200 :
-                console.log('OK')
-                console.log(results.payload.results)
-                break
-            case 400 :
-                console.log('BAD Request')
-                break
-            case 404 :
-                console.log('Not Found')
-                break
-            case 405 :
-                console.log('Method Not Allowed')
-                break
-            case 500 :
-                console.log('Internal Server Error')
-                break
-            default :
-                console.log('Server Unavailable')
-                break
-        }
-    }
-*/
+
     post (url, obj) {
         let arr = this.parseUrl(url)
         let urlKeyword1 = arr[0][0]
@@ -108,8 +86,8 @@ class Cacio {
     }
 
     createRequest (type, payload) {
-        let requestss = new Request()
-        return requestss.results(type, payload)
+        let someRequest = new Request()
+        return someRequest.makeRequest(type, payload)
     }
 
 }

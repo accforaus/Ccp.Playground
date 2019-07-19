@@ -2,10 +2,11 @@ const cacio = require('./src/transfer/cacio')
 const Server = require("./src/server/server")
 const user = require('./data/users')
 
-let nameData = {"name": {
-        "title": "ms",
-        "first": "nikoline",
-        "last": "gravdal"
+let nameData = {
+    name: {
+        title: 'ms',
+        first: 'nikoline',
+        last: 'gravdal'
     }
 }
 
@@ -82,42 +83,41 @@ let newData = {
 let newData2 = newData
 newData2.index = 1
 
-const cacio1 = new cacio()
-const result1 = cacio1.get('/user/1')
-const result2 = cacio1.post('/user/findByName', nameData)
-const result3 = cacio1.post('/user/findByLocation', locationData)
-const result4 = cacio1.post('/user/findByEmail', emailData)
-const result5 = cacio1.post('/user/findByPhone', phoneData)
-const result6 = cacio1.post('/user/findByCell', cellData)
-const result7 = cacio1.post('/user/findByGender', genderData)
-const result8 = cacio1.get('/user/delete/10')
-const result9 = cacio1.get('/user/delete/5101')
-const result10 = cacio1.post('/user/createNewObj', newData)
-const result11 = cacio1.post('/user/updateObj', newData2)
-const result12 = cacio1.post('/user/findByName', {'name' : 'WalWal'})
 
-
+let cacio1 = new cacio()
+const result1 = cacio1.get('/user/10')
 console.log(result1)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------111111111111111111111111111111------------------------`)
+const result2 = cacio1.post('/user/findByName', nameData)
 console.log(result2)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------222222222222222222222222222222------------------------`)
+const result3 = cacio1.post('/user/findByLocation', locationData)
 console.log(result3)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------333333333333333333333333333333------------------------`)
+const result4 = cacio1.post('/user/findByEmail', emailData)
 console.log(result4)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------444444444444444444444444444444------------------------`)
+const result5 = cacio1.post('/user/findByPhone', phoneData)
 console.log(result5)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------555555555555555555555555555555------------------------`)
+const result6 = cacio1.post('/user/findByCell', cellData)
 console.log(result6)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------666666666666666666666666666666------------------------`)
+const result7 = cacio1.post('/user/findByGender', genderData)
 console.log(result7)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------777777777777777777777777777777------------------------`)
+const result8 = cacio1.get('/user/delete/10')
 console.log(result8)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------888888888888888888888888888888------------------------`)
+const result9 = cacio1.get('/user/delete/5101')
 console.log(result9)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------999999999999999999999999999999------------------------`)
+const result10 = cacio1.post('/user/createNewObj', newData)
 console.log(result10)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------000000000000000000000000000000------------------------`)
+const result11 = cacio1.post('/user/updateObj', newData2)
 console.log(result11)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------111111111111111111111111111111------------------------`)
+const result12 = cacio1.post('/user/findByName', {'name' : 'WalWal'})
 console.log(result12)
-console.log(`----------------------------------------------------------------------------`)
+console.log(`------------------------222222222222222222222222222222------------------------`)
