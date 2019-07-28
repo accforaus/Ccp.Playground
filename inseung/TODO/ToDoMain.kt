@@ -37,10 +37,7 @@ class ToDoMain : AppCompatActivity() {
     fun onChangeClick(view: View) {
         val toChangeIn: EditText = findViewById(R.id.todoin)
         data.removeAt(nowIndex)
-        when (nowIndex) {
-            0 -> data.add(0, toChangeIn.text.toString())
-            else -> data.add(nowIndex, toChangeIn.text.toString())
-        }
+        data.add(nowIndex, toChangeIn.text.toString())
         adapter.notifyDataSetChanged()
     }
 
