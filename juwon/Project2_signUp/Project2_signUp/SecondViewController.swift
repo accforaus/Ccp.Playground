@@ -82,7 +82,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard let selectedImage = info[.originalImage] as? UIImage else {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             
             fatalError("오류가 발생했습니다.")
             
